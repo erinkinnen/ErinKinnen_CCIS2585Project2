@@ -35,7 +35,7 @@ namespace ErinKinnen_CCIS2585Project2
             dlgResult = MessageBox.Show("Are you sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (dlgResult == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
         private void btnForm1Exit_Click(object sender, EventArgs e)
@@ -45,13 +45,7 @@ namespace ErinKinnen_CCIS2585Project2
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dlgResult;
-
-            dlgResult = MessageBox.Show("Are you sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dlgResult == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            ExitApp();
         }
     }
 }
