@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ErinKinnen_CCIS2585Project2
 {
     public partial class Form1 : Form
@@ -15,6 +16,39 @@ namespace ErinKinnen_CCIS2585Project2
         public Form1()
         {
             InitializeComponent();
+            btnEnterPayrollData.Enabled = false;
+        }
+
+        private void btnBrowseEmpData_Click(object sender, EventArgs e)
+        {
+            var BrowsePayroll = new Form2();
+            BrowsePayroll.Show();
+        }
+
+        public void ExitApp()
+        {
+            DialogResult dlgResult;
+
+            dlgResult = MessageBox.Show("Are you sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dlgResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+        private void btnForm1Exit_Click(object sender, EventArgs e)
+        {
+            ExitApp();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgResult;
+
+            dlgResult = MessageBox.Show("Are you sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dlgResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
