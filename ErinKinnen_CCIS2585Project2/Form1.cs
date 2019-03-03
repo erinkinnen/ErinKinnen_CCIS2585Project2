@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 
 namespace ErinKinnen_CCIS2585Project2
 {
     public partial class Form1 : Form
     {
+        clsDatabase Database = null;
         public Form1()
         {
             InitializeComponent();
