@@ -343,22 +343,22 @@ namespace ErinKinnen_CCIS2585Project2
             }
         }
 
-        //*******************************************************
-        //** Method: Exit()
-        //** Prompts message box for user to verify that
-        //** they want to close the app
-        //*******************************************************
-        public void Exit()
-        {
-            DialogResult dlgResult;
+        ////*******************************************************
+        ////** Method: Exit()
+        ////** Prompts message box for user to verify that
+        ////** they want to close the app
+        ////*******************************************************
+        //public void Exit()
+        //{
+        //    DialogResult dlgResult;
 
-            dlgResult = MessageBox.Show("Are sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dlgResult == DialogResult.Yes)
-            {
-                Application.ExitThread();
-            }
+        //    dlgResult = MessageBox.Show("Are sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+        //    if (dlgResult == DialogResult.Yes)
+        //    {
+        //        Application.ExitThread();
+        //    }
 
-        }
+        //}
     }
 }
 

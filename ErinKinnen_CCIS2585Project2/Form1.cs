@@ -28,7 +28,13 @@ namespace ErinKinnen_CCIS2585Project2
             BrowsePayroll.Show();
         }
 
-        public void ExitApp()
+
+        private void btnForm1Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dlgResult;
 
@@ -37,15 +43,10 @@ namespace ErinKinnen_CCIS2585Project2
             {
                 Application.Exit();
             }
-        }
-        private void btnForm1Exit_Click(object sender, EventArgs e)
-        {
-            ExitApp();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ExitApp();
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

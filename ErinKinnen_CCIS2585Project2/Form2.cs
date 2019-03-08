@@ -16,6 +16,7 @@ namespace ErinKinnen_CCIS2585Project2
     {
         DataSet dsEmp = null;
         Int32 intCurrRow = 0;
+        //Int32 intEmpID = 0;
         clsDatabase Database = null;
         public Form2()
         {
@@ -35,7 +36,7 @@ namespace ErinKinnen_CCIS2585Project2
             }
             lblErrorForm2.Text = "";
             LoadEmployees();
-            ShowEmployee();
+            DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
         }
 
 
@@ -74,6 +75,7 @@ namespace ErinKinnen_CCIS2585Project2
             else
             {
                 ShowEmployee();
+
             }
         }
 
@@ -103,12 +105,14 @@ namespace ErinKinnen_CCIS2585Project2
         {
             intCurrRow = 0;
             ShowEmployee();
+            DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
             intCurrRow = dsEmp.Tables[0].Rows.Count - 1;
             ShowEmployee();
+            DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -118,8 +122,8 @@ namespace ErinKinnen_CCIS2585Project2
             {
                 intCurrRow = dsEmp.Tables[0].Rows.Count - 1;
             }
-
             ShowEmployee();
+            DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -127,23 +131,16 @@ namespace ErinKinnen_CCIS2585Project2
             intCurrRow += 1;
             if (intCurrRow < 0)
             {
-                intCurrRow = dsEmp.Tables[0].Rows.Count + 1;
+                intCurrRow = dsEmp.Tables[0].Rows.Count - 1;
             }
-
             ShowEmployee();
+            DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
+            
         }
 
         private void btnExitForm2_Click(object sender, EventArgs e)
         {
-            DialogResult dlgResult;
-
-            dlgResult = MessageBox.Show("Are sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dlgResult == DialogResult.Yes)
-            {
-                Application.ExitThread();
-            }
-
-            //Database.Exit();
+            Application.Exit();
         }
 
         //*******************************************************
@@ -154,7 +151,7 @@ namespace ErinKinnen_CCIS2585Project2
         {
             DataSet dsData;
             Decimal decPayrate;
-
+   
             decPayrate = clsDatabase.GetEmployeePayrate(intEmpID);
             if (decPayrate < 0m)
             {
@@ -163,7 +160,7 @@ namespace ErinKinnen_CCIS2585Project2
             }
             else
             {
-                //txtPayrate.Text = decPayrate.ToString("c");
+                txtPay.Text = decPayrate.ToString("c");
             }
 
             dsData = clsDatabase.GetEmployeePayroll(intEmpID);
@@ -192,7 +189,6 @@ namespace ErinKinnen_CCIS2585Project2
                 Application.Exit();
             }
 
-            //Database.Exit();
         }
     }
 }
