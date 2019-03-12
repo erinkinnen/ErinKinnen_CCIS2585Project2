@@ -36,17 +36,12 @@ namespace ErinKinnen_CCIS2585Project2
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dlgResult;
 
-            dlgResult = MessageBox.Show("Are you sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dlgResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
+            if (MessageBox.Show("Are you sure you want to close?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
             {
                 e.Cancel = true;
             }
+   
         }
     }
 }
