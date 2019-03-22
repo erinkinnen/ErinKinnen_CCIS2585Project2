@@ -48,6 +48,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.lblErrorForm2 = new System.Windows.Forms.Label();
+            this.lbltest = new System.Windows.Forms.Label();
             this.grpEmployee.SuspendLayout();
             this.grpPayroll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayroll)).BeginInit();
@@ -190,7 +191,7 @@
             // 
             this.dgvPayroll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPayroll.Location = new System.Drawing.Point(7, 22);
-            this.dgvPayroll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPayroll.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPayroll.Name = "dgvPayroll";
             this.dgvPayroll.Size = new System.Drawing.Size(637, 150);
             this.dgvPayroll.TabIndex = 0;
@@ -265,11 +266,21 @@
             this.lblErrorForm2.Size = new System.Drawing.Size(0, 17);
             this.lblErrorForm2.TabIndex = 8;
             // 
+            // lbltest
+            // 
+            this.lbltest.AutoSize = true;
+            this.lbltest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltest.Location = new System.Drawing.Point(59, 20);
+            this.lbltest.Name = "lbltest";
+            this.lbltest.Size = new System.Drawing.Size(0, 25);
+            this.lbltest.TabIndex = 9;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 580);
+            this.Controls.Add(this.lbltest);
             this.Controls.Add(this.lblErrorForm2);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnNext);
@@ -315,5 +326,6 @@
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Label lblErrorForm2;
         private System.Windows.Forms.DataGridView dgvPayroll;
+        private System.Windows.Forms.Label lbltest;
     }
 }
