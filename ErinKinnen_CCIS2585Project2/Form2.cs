@@ -119,7 +119,6 @@ namespace ErinKinnen_CCIS2585Project2
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Before: \n" + "Row Count = " + Convert.ToString(dsEmp.Tables[0].Rows.Count) + "\n" + "intCurrRow = " + intCurrRow);
             intCurrRow -= 1;
             if (intCurrRow < 0)
             {
@@ -127,22 +126,18 @@ namespace ErinKinnen_CCIS2585Project2
             }
             ShowEmployee();
             DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
-            //MessageBox.Show("After: \n" + "Row Count = " + Convert.ToString(dsEmp.Tables[0].Rows.Count) + "\n" + "intCurrRow = " + intCurrRow);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Before: \n" + "Row Count = " + Convert.ToString(dsEmp.Tables[0].Rows.Count) + "\n" + "intCurrRow = " + intCurrRow);
             intCurrRow += 1;
             if (intCurrRow >= dsEmp.Tables[0].Rows.Count)
             {
-                //intCurrRow = dsEmp.Tables[0].Rows.Count - 1;
                 intCurrRow = 0;
 
             }
             ShowEmployee();
             DisplayEmployeePayroll(Convert.ToInt32(txtIDNumber.Text));
-            //MessageBox.Show("After: \n" + "Row Count = " + Convert.ToString(dsEmp.Tables[0].Rows.Count) + "\n" + "intCurrRow = " + intCurrRow);
 
 
         }
