@@ -16,8 +16,6 @@ namespace ErinKinnen_CCIS2585Project2
     {
         DataSet dsEmp = null;
         Int32 intCurrRow = 0;
-        //Int32 intEmpID = 0;
-        //clsDatabase Database = null;
         public Form2()
         {
             InitializeComponent();
